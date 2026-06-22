@@ -49,10 +49,10 @@
     </div>
 
     {{-- About Section --}}
-    <div class="w-full py-12 px-4 md:px-12 lg:px-32">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-white p-6 md:p-8 rounded-2xl shadow-sm ">
+    <div id="sambutan" class="w-full py-12 px-4 md:px-12 lg:px-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-white p-6 md:p-8 rounded-2xl shadow-sm">
 
-            <div class="w-full flex justify-center lg:justify-end ">
+            <div class="w-full flex justify-center lg:justify-end">
                 <div class="w-full max-w-[400px] aspect-[3/4] overflow-hidden rounded-2xl shadow-lg ring-4 ring-emerald-50">
                     <img src="{{ asset('img/kepala-sekolah.jpg') }}" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105" alt="Kepala Sekolah MTsN Kota Cimahi" />
                 </div>
@@ -94,14 +94,14 @@
         <div class="max-w-7xl mx-auto space-y-12">
 
             <!-- Bagian Atas: Pengantar Visi Besar -->
-            <div class="max-w-3xl ">
+            <div class="max-w-3xl">
                 <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">Visi & Misi Madrasah</h2>
                 <p class="text-base md:text-lg text-white/90 leading-relaxed font-light">
                     Visi MTsN Kota Cimahi adalah <span class="font-bold text-amber-300">“Terwujudnya Madrasah BERMUTU,”</span> yang bermakna sebagai institusi pendidikan yang benar-benar berkualitas. <span class="italic text-cyan-100">“Bermutu”</span> juga merupakan akronim dari Berakhlak, Bersih, Berbunga, Modern, Unggul, Terampil, dan Unik.
                 </p>
             </div>
 
-            <!-- Bagian Bawah: Grid Konten Responsif (1 Kolom di HP, 2 Kolom di Desktop) -->
+            <!-- Bagian Bawah: Grid Konten Responsif -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
                 <!-- Blok Kiri: Indikator Visi -->
@@ -119,7 +119,6 @@
                     <ul class="space-y-3.5">
                         @foreach($visi as $index => $data)
                             <li class="flex items-start gap-3 text-white/95 text-sm md:text-base leading-relaxed group">
-                                <!-- Nomor Indikator Kustom -->
                                 <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 bg-white/20 rounded-md text-xs font-bold text-amber-300 mt-0.5 group-hover:bg-amber-400 group-hover:text-[#0992C2] transition-colors">
                                     {{ $index + 1 }}
                                 </span>
@@ -143,7 +142,6 @@
                     <ul class="space-y-3.5">
                         @foreach($misi as $index => $data)
                             <li class="flex items-start gap-3 text-white/95 text-sm md:text-base leading-relaxed group">
-                                <!-- Nomor Misi Kustom -->
                                 <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 bg-white/20 rounded-md text-xs font-bold text-emerald-300 mt-0.5 group-hover:bg-emerald-400 group-hover:text-[#0992C2] transition-colors">
                                     {{ $index + 1 }}
                                 </span>
@@ -161,7 +159,7 @@
     <div class="w-full py-16 px-4 md:px-12 lg:px-24 bg-slate-50">
         <div class="max-w-7xl mx-auto space-y-8">
             <div class="flex items-center justify-between">
-                <div class="">
+                <div>
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Berita Terbaru</h2>
                     <p class="text-sm text-slate-500 mt-1">Informasi dan kegiatan terupdate di MTsN Kota Cimahi</p>
                 </div>
@@ -177,63 +175,60 @@
             </div>
 
             <div class="relative w-full h-[350px] md:h-[480px] rounded-3xl overflow-hidden shadow-xl group">
-
                 <div id="carouselWrapper" class="flex w-full h-full transition-transform duration-700 ease-in-out">
-                    {{-- @foreach($berita as $item) --}}
-                        <div class="w-full h-full flex-shrink-0 relative">
-                            <img src="{{-- {{ asset('storage/' . $item->gambar) }} --}} {{ asset("img/Banner.jpg") }}" class="w-full h-full object-cover object-center" {{-- alt="{{ $item->judul }} --}}">
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-
-                            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 space-y-3">
-                                <span class="px-3 py-1 bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider rounded-md">
-                                    {{-- {{ $item->kategori ?? 'Kegiatan' }} --}} Kegiatan
-                                </span>
-                                <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight max-w-4xl line-clamp-2">
-                                    {{-- {{ $item->judul }} --}} Test
-                                </h3>
-                                <div class="flex items-center gap-4 text-xs md:text-sm text-slate-300">
-                                    <span>{{-- {{ $item->created_at->format('d M Y') }} --}} 12-02-2026</span>
-                                    <span>•</span>
-                                    <a href="/berita" class="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1 group/btn">
-                                        Baca Selengkapnya
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                                    </a>
-                                </div>
+                    {{-- Item Slider 1 --}}
+                    <div class="w-full h-full flex-shrink-0 relative">
+                        <img src="{{ asset('img/Banner.jpg') }}" class="w-full h-full object-cover object-center" alt="Banner Berita">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 space-y-3">
+                            <span class="px-3 py-1 bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider rounded-md">
+                                Kegiatan
+                            </span>
+                            <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight max-w-4xl line-clamp-2">
+                                Pembukaan Kegiatan Classmeeting Semester Genap MTsN Kota Cimahi
+                            </h3>
+                            <div class="flex items-center gap-4 text-xs md:text-sm text-slate-300">
+                                <span>12-02-2026</span>
+                                <span>•</span>
+                                <a href="/berita" class="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1 group/btn">
+                                    Baca Selengkapnya
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                </a>
                             </div>
                         </div>
-                        <div class="w-full h-full flex-shrink-0 relative">
-                            <img src="{{-- {{ asset('storage/' . $item->gambar) }} --}} {{ asset("img/Banner.jpg") }}" class="w-full h-full object-cover object-center" {{-- alt="{{ $item->judul }} --}}">
+                    </div>
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-
-                            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 space-y-3">
-                                <span class="px-3 py-1 mb-4 bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider rounded-md">
-                                    {{-- {{ $item->kategori ?? 'Kegiatan' }} --}} Kegiatan
-                                </span>
-                                <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight max-w-4xl line-clamp-2">
-                                    {{-- {{ $item->judul }} --}} Test
-                                </h3>
-                                <div class="flex items-center gap-4 text-xs md:text-sm text-slate-300">
-                                    <span>{{-- {{ $item->created_at->format('d M Y') }} --}} 12-02-2026</span>
-                                    <span>•</span>
-                                    <a href="/berita" class="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1 group/btn">
-                                        Baca Selengkapnya
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                                    </a>
-                                </div>
+                    {{-- Item Slider 2 --}}
+                    <div class="w-full h-full flex-shrink-0 relative">
+                        <img src="{{ asset('img/Banner.jpg') }}" class="w-full h-full object-cover object-center" alt="Banner Berita">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 space-y-3">
+                            <span class="px-3 py-1 bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider rounded-md">
+                                Kegiatan
+                            </span>
+                            <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight max-w-4xl line-clamp-2">
+                                Pelaksanaan Ujian Madrasah Berbasis Komputer Berjalan Lancar
+                            </h3>
+                            <div class="flex items-center gap-4 text-xs md:text-sm text-slate-300">
+                                <span>12-02-2026</span>
+                                <span>•</span>
+                                <a href="/berita" class="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1 group/btn">
+                                    Baca Selengkapnya
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                </a>
                             </div>
                         </div>
-                    {{-- @endforeach --}}
+                    </div>
+
                 </div>
 
+                {{-- Indikator Dot Slider --}}
                 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                    {{-- @foreach($berita as $index => $item) --}}
-                        <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" data-slide="{{ $index }}"></button>
-                    {{-- @endforeach --}}
+                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white transition-all duration-300" data-slide="0"></button>
+                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" data-slide="1"></button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -242,7 +237,7 @@
         <div class="max-w-7xl mx-auto space-y-8">
 
             <div>
-                <h2 class='text-slate-900 font-extrabold text-3xl tracking-tight'>Info Lainnya</h2>
+                <h2 class="text-slate-900 font-extrabold text-3xl tracking-tight">Info Lainnya</h2>
                 <p class="text-sm text-slate-500 mt-1">Ikuti kegiatan lainnya dari sekolah kami</p>
             </div>
 
@@ -314,17 +309,17 @@
         </div>
     </div>
 
-    {{--  --}}
+    {{-- Quotes Section --}}
     <section class="w-full py-20 px-4 md:px-12 lg:px-24 bg-white relative overflow-hidden">
         <div class="absolute top-10 left-12 text-slate-100 pointer-events-none select-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-44 w-44 fill-current opacity-60" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9 Diploma-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
         </div>
 
         <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
             <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/xl" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
             </div>
@@ -336,12 +331,12 @@
             <div class="w-16 h-1 bg-emerald-500 mx-auto rounded-full my-4"></div>
 
             <div>
-               {{--  <cite class="not-italic font-extrabold text-slate-900 tracking-wide text-base md:text-lg block">
-                    Prof. Dr. KH. Ali Mustafa Yaqub, MA.
+                <cite class="not-italic font-extrabold text-slate-900 tracking-wide text-base md:text-lg block">
+                    Imam Syafi'i RA.
                 </cite>
                 <span class="text-xs md:text-sm text-slate-500 font-medium tracking-wider uppercase mt-0.5 block">
-                    Tokoh Pendidikan & Ulama Nusantara
-                </span> --}}
+                    Ulama & Mujtahid Agung Nusantara/Dunia
+                </span>
             </div>
         </div>
     </section>

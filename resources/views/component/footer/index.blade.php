@@ -1,6 +1,7 @@
 <footer class="w-full bg-[#0B2D72] text-slate-300 pt-16 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
 
+        <!-- Kolom 1: Profil Singkat & Sosmed -->
         <div class="space-y-4">
             <div class="flex items-center gap-3">
                 <div class="h-12 w-12 p-1 bg-white rounded-xl shadow-md">
@@ -8,7 +9,6 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="font-black text-white text-base tracking-wide leading-tight">MTsN 1 KOTA CIMAHI</span>
-                    {{-- <span class="text-[10px] text-emerald-400 tracking-wider font-semibold uppercase">Kementerian Agama RI</span> --}}
                 </div>
             </div>
             <p class="text-sm leading-relaxed text-slate-300 font-light">
@@ -27,38 +27,40 @@
             </div>
         </div>
 
+        <!-- Kolom 2: Tautan Jelajah -->
         <div class="space-y-4 md:pl-6 lg:pl-12">
             <h3 class="text-white font-bold text-base tracking-wide border-b border-white/10 pb-2 inline-block w-full">Jelajah</h3>
             <ul class="space-y-2.5 text-sm font-light">
-                <li><a href="/" class="hover:text-emerald-400 hover:translate-x-1 inline-flex items-center gap-1 transition-all">Beranda</a></li>
-                <li><a href="#profil" class="hover:text-emerald-400 hover:translate-x-1 inline-flex items-center gap-1 transition-all">Profil Madrasah</a></li>
-                <li><a href="#akademik" class="hover:text-emerald-400 hover:translate-x-1 inline-flex items-center gap-1 transition-all">Info Akademik</a></li>
-                <li><a href="#berita" class="hover:text-emerald-400 hover:translate-x-1 inline-flex items-center gap-1 transition-all">Berita & Kegiatan</a></li>
-                <li><a href="#ppdb" class="hover:text-emerald-400 hover:translate-x-1 inline-flex items-center gap-1 transition-all text-emerald-400 font-medium">PPDB Online 2026</a></li>
+                <li><a href="/" class="hover:text-emerald-400 hover:translate-x-1 inline-block transition-all duration-300">Beranda</a></li>
+                <li><a href="#profil" class="hover:text-emerald-400 hover:translate-x-1 inline-block transition-all duration-300">Profil Madrasah</a></li>
+                <li><a href="#akademik" class="hover:text-emerald-400 hover:translate-x-1 inline-block transition-all duration-300">Info Akademik</a></li>
+                <li><a href="#berita" class="hover:text-emerald-400 hover:translate-x-1 inline-block transition-all duration-300">Berita & Kegiatan</a></li>
+                <li><a href="#ppdb" class="hover:text-emerald-400 hover:translate-x-1 inline-block text-emerald-400 font-medium transition-all duration-300">PPDB Online 2026</a></li>
             </ul>
         </div>
 
+        <!-- Kolom 3: Kontak Informasi -->
         <div class="space-y-4">
             <h3 class="text-white font-bold text-base tracking-wide border-b border-white/10 pb-2 inline-block w-full">Hubungi Kami</h3>
             <ul class="space-y-3 text-sm font-light">
                 <li class="flex items-start gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    <span>Komplek Pemda 2 Lestari, Jl. Tsanawiyah No.1, RW.11, Cibeber, Cimahi Selatan, Kota Cimahi, Jawa Barat 40531</span>
+                    <span class="leading-relaxed">Komplek Pemda 2 Lestari, Jl. Tsanawiyah No.1, RW.11, Cibeber, Cimahi Selatan, Kota Cimahi, Jawa Barat 40531</span>
                 </li>
                 <li class="flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     <span>(022) 6671464</span>
                 </li>
-
             </ul>
         </div>
 
+        <!-- Kolom 4: Google Maps Frame -->
         <div class="space-y-4">
             <h3 class="text-white font-bold text-base tracking-wide border-b border-white/10 pb-2 inline-block w-full">Lokasi Madrasah</h3>
-            <div class="w-full h-36 rounded-2xl overflow-hidden shadow-md border border-white/10 relative">
+            <div class="w-full h-36 rounded-2xl overflow-hidden shadow-md border border-white/10 relative group">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8353381648035!2d107.54146037450125!3d-6.911470567643538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e5dfa82af80b%3A0x6bba847c94fa22ea!2sMTsN%20Cimahi!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
-                    class="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    class="w-full h-full border-0 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                     allowfullscreen=""
                     loading="lazy">
                 </iframe>
@@ -67,8 +69,9 @@
 
     </div>
 
+    <!-- Sisi Bawah: Copyright & Hak Cipta -->
     <div class="w-full py-6 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-400 font-light max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
         <p>© 2026 MTsN Kota Cimahi. All Rights Reserved.</p>
-        <p>Disusun & Dikembangkan oleh <span class="font-semibold text-slate-300"> HUMAS MTsN Kota Cimahi</span></p>
+        <p>Disusun & Dikembangkan oleh <span class="font-semibold text-slate-300">HUMAS MTsN Kota Cimahi</span></p>
     </div>
 </footer>

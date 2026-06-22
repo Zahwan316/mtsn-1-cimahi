@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get("/profil", function(){
+    return view("page.profilemadrasah");
 });
 
-Route::get("/beranda", function(){
+Route::get("/", function(){
     $visi = [
         "Lulusan dan seluruh civitas memiliki akhlak yang mulia: Setiap siswa dan staf madrasah menunjukkan perilaku yang baik dan sesuai dengan nilai-nilai moral dan agama.",
         "Madrasah yang bersih, indah, dan nyaman: Lingkungan madrasah terjaga kebersihannya, dengan penataan yang estetis dan suasana yang nyaman untuk belajar.",

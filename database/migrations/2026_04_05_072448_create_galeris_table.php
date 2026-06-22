@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('galeris', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained("user")->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained("users")->cascadeOnDelete();
             $table->string('url');
             $table->enum('type', ['foto', 'video']);
             $table->timestamps();
