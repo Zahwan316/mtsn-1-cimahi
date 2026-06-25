@@ -37,7 +37,7 @@
 
     @yield("body")
 
-    <div class="w-full py-12 px-4 md:px-12 lg:px-32">
+    <div class="w-full py-12 px-4 md:px-12 lg:px-32 min-h-screen">
         <div class="max-w-7xl mx-auto space-y-12">
             @yield("section")
         </div>
