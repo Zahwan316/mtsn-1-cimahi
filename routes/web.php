@@ -61,6 +61,42 @@ Route::get("/alumni", function(){
     return view("page.alumni");
 });
 
+Route::get("/komite", function(){
+    return view("page.komite");
+});
+
+Route::get("/ekstrakurikuler", function(){
+    return view("page.ekstrakurikuler");
+});
+
+Route::get("/ekstrakurikuler/{slug}", function(string $slug){
+    return view("page.ekstrakurikuler-detail", ["slug"=> $slug]);
+});
+
+Route::get("/siswa", function(){
+    return view("page.daftarsiswa");
+});
+
+Route::get("/saran", function(){
+    return view("page.saran");
+});
+
+Route::get("/galeri", function(){
+    return view("page.galeri");
+});
+
+Route::get("/galeri/{slug}", function(){
+    return view("page.galeri-detail");
+});
+
+Route::get("/video", function(){
+    return view("page.video");
+});
+
+Route::get("/video/{slug}", function(){
+    return view("page.video-detail");
+});
+
 Route::get("/", function(){
     $visi = [
         "Lulusan dan seluruh civitas memiliki akhlak yang mulia: Setiap siswa dan staf madrasah menunjukkan perilaku yang baik dan sesuai dengan nilai-nilai moral dan agama.",
